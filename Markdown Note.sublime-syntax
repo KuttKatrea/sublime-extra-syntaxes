@@ -1,0 +1,11 @@
+%YAML 1.2
+---
+name: Markdown Note
+version: 2
+scope: text.html.markdown.note
+file_extensions:
+  - note
+contexts:
+  main:
+    - meta_scope: text.html.markdown
+    - include: scope:text.html.markdown

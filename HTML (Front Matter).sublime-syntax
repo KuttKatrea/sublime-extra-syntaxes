@@ -1,0 +1,36 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions: []
+
+scope: text.html.front-matter
+version: 2
+
+contexts:
+  main:
+    # The main context is the initial starting point of our syntax.
+    # Include other contexts from here (or specify them directly).
+    - include: frontmatter
+    - include: html
+
+  frontmatter:
+    - match: '^---$'
+      scope: frontmatter.open
+      push: embedded-yaml
+
+  embedded-yaml:
+    - match: '^---$'
+      scope: frontmatter.close
+      pop: true
+    - include: scope:source.yaml
+      apply_prototype: true
+
+  yaml:
+    - meta_content_scope: source.yaml
+    - include: scope:source.yaml
+      apply_prototype: true
+
+  html:
+    - meta_content_scope: text.html.basic
+    - include: scope:text.html.basic
+      apply_prototype: true

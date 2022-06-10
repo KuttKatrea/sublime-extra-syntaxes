@@ -1,0 +1,13 @@
+%YAML 1.2
+---
+name: JavaScript (MongoDB)
+version: 2
+file_extensions:
+  - mongodb.js
+  - mongodb
+scope: source.mongodb.js
+contexts:
+  main:
+    - meta_scope: source.js
+    - include: scope:source.js
+

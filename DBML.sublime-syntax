@@ -1,0 +1,9 @@
+%YAML 1.2
+---
+name: Database Markup Language
+file_extensions:
+  - dbml
+scope: source.dbml
+
+contexts:
+  main: []
